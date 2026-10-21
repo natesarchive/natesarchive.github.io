@@ -10,7 +10,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nate's Medieval Library" />
     <meta property="og:description" content="Two endless grimoires: six complete novels free to read cover to cover, and sneak peeks with the full books on Google Play. The library holds 519 books. 500 books. Many artists. One pen name." />
-    <meta property="og:url" content="https://muse.ai/s/nate-s-medieval-library-xtxa6zxejxraoxi1" />
+    <meta property="og:url" content="https://natesarchive.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- fonts load without blocking first paint: the entrance paints at once,
@@ -658,7 +658,7 @@
             <span class="d-name">The Shop Grimoire</span>
             <span class="d-desc">The purchasable books — the Archive's shelf at the bookshop, each with its first chapter free here.</span>
             <span class="d-tally">
-              <span class="t-big">21 books</span>
+              <span class="t-big">20 books</span>
               <span class="t-line">on Google Play</span>
               <span class="t-line">every one opens with a free chapter</span>
             </span>
@@ -709,7 +709,7 @@
         <div class="view-head">
           <button class="btn view-back" type="button" data-back>&larr; The entrance</button>
           <h2 class="view-title">The Shop Grimoire</h2>
-          <p class="view-sub">The purchasable shelf — twenty-one books at the bookshop on Google Play. Every one of them opens with a first chapter you can read free, here in the Free Grimoire.</p>
+          <p class="view-sub">The purchasable shelf — twenty books at the bookshop on Google Play. Every one of them opens with a first chapter you can read free, here in the Free Grimoire.</p>
         </div>
         <div class="grim">
           <div id="shopList"></div>
@@ -804,7 +804,7 @@
         { file: "preview-the-broken-rule", title: "The Broken Rule", chapters: 1, words: 2780, spine: "#6b2737", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=DcMWEgAAQBAJ" },
         { file: "preview-the-blood-wakes", title: "The Blood Wakes", chapters: 1, words: 1674, spine: "#7c1f1f", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=T8MWEgAAQBAJ" },
         { file: "preview-the-last-king", title: "The Last King", chapters: 1, words: 2061, spine: "#23404d", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=d8MWEgAAQBAJ" },
-        { file: "preview-the-salt-road", title: "The Salt Road", chapters: 1, words: 1894, spine: "#6e5136", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=9lI-EgAAQBAJ" },
+        { file: "preview-the-salt-road", title: "The Salt Road", chapters: 1, words: 1894, spine: "#6e5136", trim: "#d9a83c", preview: true, buy: "" },
         { file: "preview-the-farthest-tutorial", title: "THE FARTHEST TUTORIAL — Volume 1", chapters: 1, words: 1108, spine: "#8a3324", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=8HwaEgAAQBAJ" },
         { file: "preview-godflesh", title: "GODFLESH — Volume 1", chapters: 1, words: 3018, spine: "#5e2320", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=AH0aEgAAQBAJ" },
         { file: "preview-the-last-sentence", title: "THE LAST SENTENCE — Volume 1", chapters: 1, words: 1622, spine: "#31445c", trim: "#d9a83c", preview: true, buy: "https://play.google.com/store/books/details?id=Jn0aEgAAQBAJ" },
@@ -842,7 +842,6 @@
         { title: "The Blood Wakes", blurb: "The Dragon King's Blood, Book 2.", price: "$4.99", buy: "https://play.google.com/store/books/details?id=T8MWEgAAQBAJ", peek: "preview-the-blood-wakes" },
         { title: "The Broken Rule", blurb: "The Dragon King's Blood, Book 1.", price: "$3.99", buy: "https://play.google.com/store/books/details?id=DcMWEgAAQBAJ", peek: "preview-the-broken-rule" },
         { title: "The Last King", blurb: "The Dragon King's Blood, Book 3.", price: "$5.99", buy: "https://play.google.com/store/books/details?id=d8MWEgAAQBAJ", peek: "preview-the-last-king" },
-        { title: "The Salt Road", blurb: "A standalone from the Archive.", price: null, buy: "https://play.google.com/store/books/details?id=9lI-EgAAQBAJ", peek: "preview-the-salt-road" }
       ];
       var ALL_BOOKS = FREE_FULL.concat(PEEKS);
       function bookByFile(file) {
@@ -935,7 +934,7 @@
         },
         {
           date: "18 October 2026",
-          text: "The library has thrown open two great grimoires. The Free Grimoire holds six complete novels and twenty-one free first chapters — 549 chapters to read without a coin — and the Shop Grimoire shelves all twenty-one purchasable books, each opening with a free chapter here."
+          text: "The library has thrown open two great grimoires. The Free Grimoire holds six complete novels and twenty-one free first chapters — 549 chapters to read without a coin — and the Shop Grimoire shelves all twenty purchasable books, each opening with a free chapter here."
         },
         {
           date: "16 October 2026",
@@ -1217,8 +1216,8 @@
         return '<div class="peek-end">' +
           '<div class="pe-kicker">End of the sneak peek</div>' +
           '<p class="pe-text">The free chapter closes there — the rest of <i>' + esc(d.title) + '</i> waits on the bookshop shelf.</p>' +
-          '<p class="pe-actions"><a class="btn" data-buy href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + "</a></p>" +
-          '<p class="pe-note">Opens Google Play in a new tab — or return to the grimoire and read on.</p>' +
+          (url ? '<p class="pe-actions"><a class="btn" data-buy href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + "</a></p>" +
+          '<p class="pe-note">Opens Google Play in a new tab — or return to the grimoire and read on.</p>' : '<p class=\"pe-text\">The full book is not on the shelf yet — the Archive opens more every week.</p>') +
           "</div>";
       }
       document.getElementById("btnReturn").addEventListener("click", closeReader);
